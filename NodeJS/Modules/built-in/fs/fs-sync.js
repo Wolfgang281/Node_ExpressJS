@@ -42,7 +42,10 @@ try {
 
 //? 5) reading again after append
 try {
-  let updatedContents = fs.readFileSync("./Project/index.txt", "utf-8");
+  // let updatedContents = fs.readFileSync("./Project/index.txt", {
+  //   encoding: "utf-8",
+  // });
+  let updatedContents = fs.readFileSync("./Project/index.txt");
   console.log("Updated contents:\n", updatedContents);
 } catch (error) {
   console.log("Error while reading updated file:", error.message);
@@ -73,7 +76,6 @@ try {
   console.log("Error while deleting folder:", error.message);
 }
 
-//TODO: open()
 //? openSync() -> returns file descriptor (number)
 // format -> fs.openSync("path", "flag")
 
@@ -85,3 +87,5 @@ try {
 } catch (error) {
   console.log("Error using openSync:", error.message);
 }
+
+console.log(globalThis);
